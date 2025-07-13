@@ -1088,7 +1088,14 @@ p {
         height: 140px;
     }
     .menu-category h3{
+        font-size: 1.2rem;
+    }
+    .menu-card h4{
         font-size: 1rem;
+    }
+    .menu-card p{
+        font-size: 0.90rem;
+    }
 }
 
 .location-section {
