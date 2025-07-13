@@ -315,11 +315,11 @@ p {
 
     .welcome-text h2 {
         text-align: center;
-        font-size: 15px;
+        font-size: 18px;
     }
 
     .welcome-text p {
-        font-size: 13px;
+        font-size: 15px;
     }
 }
 
