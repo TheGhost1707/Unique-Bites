@@ -958,7 +958,7 @@ p {
     }
 
     .product-section p {
-        font-size: 0.70rem;
+        font-size: 0.80rem;
     }
 
     .product-card {
@@ -966,12 +966,12 @@ p {
     }
 
     .product-card img {
-        width: 38px;
-        height: 38px;
+        width: 48px;
+        height: 48px;
     }
 
     .product-card p {
-        font-size: 0.70rem;
+        font-size: 0.80rem;
     }
 
     .product-card h4 {
@@ -1085,7 +1085,7 @@ p {
     }
 
     .menu-card img {
-        height: 160px;
+        height: 140px;
     }
 }
 
