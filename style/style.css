@@ -222,7 +222,7 @@ nav ul li a:hover {
     }
 
     nav ul.show {
-        font-size: 10px;
+        font-size: 15px;
         max-height: 300px;
         padding: 0.5rem 0;
     }
