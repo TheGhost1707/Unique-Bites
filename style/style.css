@@ -201,7 +201,7 @@ nav ul li a:hover {
     width: 25px;
     background: white;
     border-radius: 50px;
-    transition: 0.3s ease;
+    transition: 0.1s ease;
 }
 
 /* ==== RESPONSIVE STYLES ==== */
