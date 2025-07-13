@@ -1087,6 +1087,8 @@ p {
     .menu-card img {
         height: 140px;
     }
+    .menu-category h3{
+        font-size: 1.2rem;
 }
 
 .location-section {
