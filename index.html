@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Beranda</title>
+    <link rel="icon" type="image/png" href="img/icon/icon_uniquebites.png">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+    <!-- Lottie player DIHAPUS karena tidak digunakan -->
+</head>
+
+<body>
+    <div id="loader" class="active">
+        <div class="loader-logo">
+            <img src="img/logo/loading_uniquebites.png" alt="Loading Logo">
+            <p id="loader-text">Mohon tunggu ya...</p>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="img/logo/Sticker-Minuman.svg" alt="Logo" />
+                <div class="title-slogan">
+                    <h1>Unique Bites</h1>
+                    <p>Rasa yang unik selalu ada</p>
+                </div>
+            </div>
+
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Product/Menu</a></li>
+                    <li><a href="location.html">Location</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+        <div class="welcome-section">
+            <div class="welcome-image">
+                <img src="img/logo/kucing-hello.png" alt="Maskot Kucing" class="maskot-kucing" />
+            </div>
+            <div class="welcome-text">
+                <h2>Selamat datang di Website Unique Bites ✨</h2>
+                <p>
+                    Website ini berisi informasi mengenai produk cemilan dan minuman yang dikelola oleh pemilik Unique
+                    Bites. Nantikan cemilan dan minuman terbaru serta promo-promo menarik hanya melalui website ini atau
+                    bisa dilihat melalui toko
+                    online yang tertera di bawah ini
+                </p>
+
+                <!-- Logo GrabFood dan GoFood -->
+                <div class="online-shops">
+                    <a href="https://food.grab.com/id/id/" target="_blank" class="shop-link">
+                        <img src="img/logo/GrabFood.png" alt="GrabFood" />
+                    </a>
+                    <a href="https://gofood.co.id/" target="_blank" class="shop-link2">
+                        <img src="img/logo/gofood.png" alt="GoFood" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="image-slider">
+            <div class="slides">
+                <img src="img/logo/Banner.svg" alt="Slide 1">
+                <img src="img/logo/Banner.svg" alt="Slide 2">
+                <img src="img/logo/Banner.svg" alt="Slide 3">
+            </div>
+            <div class="slider-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        <!-- Subjudul & Cuplikan Produk -->
+        <section class="product-preview">
+            <h3>✨ Best Seller Menu ✨</h3>
+            <div class="product-thumbs">
+                <div class="product-best">
+                    <img src="img/product/cream-drink.jpeg" alt="Menu 1">
+                    <p>Sweet Cream Latte</p>
+                </div>
+                <div class="product-best">
+                    <img src="img/product/drink-cream.jpeg" alt="Menu 2">
+                    <p>Cream Matcha Latte</p>
+                </div>
+                <div class="product-best">
+                    <img src="img/product/kopi-example.jpeg" alt="Menu 3">
+                    <p>Spanish Latte</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Brand -->
+            <div class="footer-brand">
+                <img src="img/logo/Sticker-Minuman.svg" alt="Unique Bites Logo">
+                <h4>Unique Bites</h4>
+                <p>Snack & minuman unik untuk warna hidupmu 🌈</p>
+            </div>
+
+            <!-- Menu Link -->
+            <div class="footer-links">
+                <h5>Navigasi</h5>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                    <li><a href="menu.html">Produk</a></li>
+                    <li><a href="location.html">Lokasi</a></li>
+                </ul>
+            </div>
+
+            <!-- Kontak -->
+            <div class="footer-contact">
+                <h5>Kontak Kami</h5>
+                <ul>
+                    <li>📞 <a href="tel:+6281234567890">+62 812-3456-7890</a></li>
+                    <li>📧 <a href="mailto:info@uniquebites.id">info@uniquebites.id</a></li>
+                    <li>📍 Yogyakarta, Indonesia</li>
+                </ul>
+            </div>
+
+            <!-- Sosial Media -->
+            <div class="footer-social">
+                <h5>Ikuti Kami</h5>
+                <div class="social-icons">
+                    <a href="#"><img src="img/logo/instagram.svg" alt="Instagram" /></a>
+                    <a href="#"><img src="img/logo/tiktok.svg" alt="TikTok" /></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bawah -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Unique Bites. Semua hak dilindungi undang-undang. 🍪</p>
+        </div>
+    </footer>
+
+    <script>
+        const slidesContainer = document.querySelector('.slides');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = dots.length;
+        let currentIndex = 0;
+
+        function updateDots(index) {
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+
+        function autoSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            updateDots(currentIndex);
+        }
+
+        setInterval(autoSlide, 7000);
+    </script>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById("nav-menu");
+            navMenu.classList.toggle("show");
+        }
+    </script>
+
+    <script>
+        // Loader logic
+        const loader = document.getElementById("loader");
+        const loaderText = document.getElementById("loader-text");
+
+        function showPageLoading() {
+            loaderText.textContent = 'Mohon tunggu...';
+            loader.classList.add('active');
+        }
+
+        function showSlowNetworkLoading() {
+            loaderText.textContent = 'Jaringanmu sedikit lambat...';
+            loader.classList.add('active');
+        }
+
+        function hideLoading() {
+            loader.classList.remove('active');
+        }
+
+        // Hilangkan loader setelah halaman load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                hideLoading();
+            }, 2500); // durasi sesuai animasi / efek
+        });
+
+        // Deteksi jaringan lambat (opsional)
+        if (navigator.connection) {
+            navigator.connection.addEventListener('change', () => {
+                if (navigator.connection.downlink < 0.5) {
+                    showSlowNetworkLoading();
+                    setTimeout(hideLoading, 3000);
+                }
+            });
+        }
+
+        // Catatan: panggil showPageLoading() saat pindah halaman (misalnya onClick di link)
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Location</title>
+    <link rel="icon" type="image/png" href="img/icon/icon_uniquebites.png">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loader" class="active">
+        <div class="loader-logo">
+            <img src="img/logo/loading_uniquebites.png" alt="Loading Logo">
+            <p id="loader-text">Mohon tunggu ya...</p>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="img/logo/Sticker-Minuman.svg" alt="Logo" />
+                <div class="title-slogan">
+                    <h1>Unique Bites</h1>
+                    <p>Rasa yang unik selalu ada</p>
+                </div>
+            </div>
+
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Product/Menu</a></li>
+                    <li><a href="location.html">Location</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+        <section class="location-section">
+            <div class="location-info">
+                <h2 class="underline-title">Lokasi Kami</h2>
+                <p>Temukan Unique Bites secara langsung dan rasakan kelezatan di tempat! Kami berada di lokasi strategis
+                    di pusat Kabupaten Bogor — mudah diakses, nyaman, dan pastinya Instagramable. 📍</p>
+                <ul class="location-details">
+                    <li><strong>Alamat:</strong><br>Jl. Perumahan Bukit Waringin Blok G6 NO.003, RT.004/RW.014, Desa
+                        Cimanggis, Kec. Bojong Gede, Kab. Bogor, Jawa Barat 16920</li>
+                    <li><strong>Jam Buka:</strong><br>Setiap Hari, 10.00 - 22.00 WIB</li>
+                    <li><strong>No. Telepon:</strong><br><a
+                            href="https://wa.me/6285143510320?text=Halo%2C%20admin%20Unique%20Bites..." target="_blank"
+                            class="whatsapp-link">
+                            Chat Via WhatsApp
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Google Maps -->
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3964.2164010060214!2d106.7835031749927!3d-6.494262493497841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMjknMzkuMyJTIDEwNsKwNDcnMDkuOSJF!5e0!3m2!1sid!2sid!4v1752377862001!5m2!1sid!2sid"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="img/logo/Sticker-Minuman.svg" alt="Unique Bites Logo">
+                <h4>Unique Bites</h4>
+                <p>Snack & minuman unik untuk warna hidupmu 🌈</p>
+            </div>
+            <div class="footer-links">
+                <h5>Navigasi</h5>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                    <li><a href="menu.html">Produk</a></li>
+                    <li><a href="#">Lokasi</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Kontak Kami</h5>
+                <ul>
+                    <li>📞 <a href="tel:+6281234567890">+62 812-3456-7890</a></li>
+                    <li>📧 <a href="mailto:info@uniquebites.id">info@uniquebites.id</a></li>
+                    <li>📍 Yogyakarta, Indonesia</li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h5>Ikuti Kami</h5>
+                <div class="social-icons">
+                    <a href="#"><img src="img/logo/instagram.svg" alt="Instagram" /></a>
+                    <a href="#"><img src="img/logo/tiktok.svg" alt="TikTok" /></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Unique Bites. Semua hak dilindungi undang-undang. 🍪</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById("nav-menu");
+            navMenu.classList.toggle("show");
+        }
+
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 2500);
+        });
+    </script>
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 2500); // Biarkan sesuai dengan durasi progressAnim
+        });
+    </script>
+
+    <script>
+        // Loader logic
+        const loader = document.getElementById("loader");
+        const loaderText = document.getElementById("loader-text");
+
+        function showPageLoading() {
+            loaderText.textContent = 'Mohon tunggu...';
+            loader.classList.add('active');
+        }
+
+        function showSlowNetworkLoading() {
+            loaderText.textContent = 'Jaringanmu sedikit lambat...';
+            loader.classList.add('active');
+        }
+
+        function hideLoading() {
+            loader.classList.remove('active');
+        }
+
+        // Hilangkan loader setelah halaman load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                hideLoading();
+            }, 2500); // durasi sesuai animasi / efek
+        });
+
+        // Deteksi jaringan lambat (opsional)
+        if (navigator.connection) {
+            navigator.connection.addEventListener('change', () => {
+                if (navigator.connection.downlink < 0.5) {
+                    showSlowNetworkLoading();
+                    setTimeout(hideLoading, 3000);
+                }
+            });
+        }
+
+    // Catatan: panggil showPageLoading() saat pindah halaman (misalnya onClick di link)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Menu / Product</title>
+    <link rel="icon" type="image/png" href="img/icon/icon_uniquebites.png">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loader" class="active">
+        <div class="loader-logo">
+            <img src="img/logo/loading_uniquebites.png" alt="Loading Logo">
+            <p id="loader-text">Mohon tunggu ya...</p>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="img/logo/Sticker-Minuman.svg" alt="Logo" />
+                <div class="title-slogan">
+                    <h1>Unique Bites</h1>
+                    <p>Rasa yang unik selalu ada</p>
+                </div>
+            </div>
+
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Product/Menu</a></li>
+                    <li><a href="location.html">Location</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+        <section class="product-section">
+            <h3>Menu di Unique Bites</h3>
+            <p>Kami menyediakan berbagai pilihan snack, minuman non-kopi, dan minuman kopi yang siap menemani harimu!
+            </p>
+            <div class="product-categories">
+                <div class="product-card">
+                    <img src="img/icon/snack.png" alt="Logo Cemilan">
+                    <h4>Cemilan</h4>
+                    <p>Aneka cemilan gurih dan manis yang renyah, cocok buat nyemil kapan saja.</p>
+                </div>
+                <div class="product-card">
+                    <img src="img/icon/drink.png" alt="Logo Minuman Non-Kopi">
+                    <h4>Minuman Non-Kopi</h4>
+                    <p>Minuman segar seperti teh, jus, dan lainnya. Pilihan tepat untuk semua kalangan.</p>
+                </div>
+                <div class="product-card">
+                    <img src="img/icon/coffee.png" alt="Logo Minuman Kopi">
+                    <h4>Minuman Kopi</h4>
+                    <p>Dari espresso sampai kopi susu kekinian, kami punya semua yang kamu suka.</p>
+                </div>
+            </div>
+        </section>
+        <section class="menu-display">
+            <div class="menu-category">
+                <h3 class="underline-title">Cemilan</h3>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <img src="img/menu/snack1.jpg" alt="Choco Crunch">
+                        <h4>Choco Crunch</h4>
+                        <p class="price">Rp 12.000</p>
+                    </div>
+                    <div class="menu-card">
+                        <img src="img/menu/snack2.jpg" alt="Spicy Cheese Balls">
+                        <h4>Spicy Cheese Balls</h4>
+                        <p class="price">Rp 15.000</p>
+                    </div>
+                    <div class="menu-card">
+                        <img src="img/menu/snack3.jpg" alt="Caramel Popcorn">
+                        <h4>Caramel Popcorn</h4>
+                        <p class="price">Rp 10.000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="underline-title">Minuman Non-kopi</h3>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <img src="img/product/minuman/3.jpg" alt="Black Tea">
+                        <h4>Black Tea</h4>
+                        <p class="price">Rp 4.000</p>
+                    </div>
+                    <div class="menu-card">
+                        <img src="img/product/minuman/7.jpg" alt="Chocolate">
+                        <h4>Chocolate</h4>
+                        <p class="price">Rp 6.000</p>
+                    </div>
+                    <div class="menu-card">
+                        <img src="img/product/minuman/4.jpg" alt="Lemon Tea">
+                        <h4>Lemon Tea</h4>
+                        <p class="price">Rp 6.000</p>
+                    </div>
+                    <div class="menu-card">
+                        <img src="img/product/minuman/5.jpg" alt="Matcha">
+                        <h4>Matcha Latte</h4>
+                        <p class="price">Rp 11.000</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3 class="underline-title">Minuman Kopi</h3>
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <img src="img/product/minuman/6.jpg" alt="Americano">
+                        <h4>Americano</h4>
+                        <p class="price">Rp 6.000</p>
+                    </div>
+                    <div class="menu-card">
+                        <img src="img/product/minuman/8.jpg" alt="Butterscouth">
+                        <h4>Butterscouth</h4>
+                        <p class="price">Rp 13.000</p>
+                    </div>
+                    <div class="menu-card">
+                        <img src="img/product/minuman/2.jpg" alt="Spanish Latte">
+                        <h4>Spanish Latte</h4>
+                        <p class="price">Rp 9.000</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="img/logo/Sticker-Minuman.svg" alt="Unique Bites Logo">
+                <h4>Unique Bites</h4>
+                <p>Snack & minuman unik untuk warna hidupmu 🌈</p>
+            </div>
+            <div class="footer-links">
+                <h5>Navigasi</h5>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                    <li><a href="menu.html">Produk</a></li>
+                    <li><a href="location.html">Lokasi</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h5>Kontak Kami</h5>
+                <ul>
+                    <li>📞 <a href="tel:+6281234567890">+62 812-3456-7890</a></li>
+                    <li>📧 <a href="mailto:info@uniquebites.id">info@uniquebites.id</a></li>
+                    <li>📍 Yogyakarta, Indonesia</li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h5>Ikuti Kami</h5>
+                <div class="social-icons">
+                    <a href="#"><img src="img/logo/instagram.svg" alt="Instagram" /></a>
+                    <a href="#"><img src="img/logo/tiktok.svg" alt="TikTok" /></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Unique Bites. Semua hak dilindungi undang-undang. 🍪</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById("nav-menu");
+            navMenu.classList.toggle("show");
+        }
+
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 2500);
+        });
+    </script>
+    <script>
+        // Observe semua menu-card & subjudul untuk animasi saat masuk viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    if (entry.target.classList.contains('underline-title')) {
+                        entry.target.classList.add('in-view');
+                    }
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        // Target semua elemen yang ingin dianimasi
+        document.querySelectorAll('.menu-card, .underline-title').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 2500); // Biarkan sesuai dengan durasi progressAnim
+        });
+    </script>
+
+    <script>
+        // Loader logic
+        const loader = document.getElementById("loader");
+        const loaderText = document.getElementById("loader-text");
+
+        function showPageLoading() {
+            loaderText.textContent = 'Mohon tunggu...';
+            loader.classList.add('active');
+        }
+
+        function showSlowNetworkLoading() {
+            loaderText.textContent = 'Jaringanmu sedikit lambat...';
+            loader.classList.add('active');
+        }
+
+        function hideLoading() {
+            loader.classList.remove('active');
+        }
+
+        // Hilangkan loader setelah halaman load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                hideLoading();
+            }, 2500); // durasi sesuai animasi / efek
+        });
+
+        // Deteksi jaringan lambat (opsional)
+        if (navigator.connection) {
+            navigator.connection.addEventListener('change', () => {
+                if (navigator.connection.downlink < 0.5) {
+                    showSlowNetworkLoading();
+                    setTimeout(hideLoading, 3000);
+                }
+            });
+        }
+
+    // Catatan: panggil showPageLoading() saat pindah halaman (misalnya onClick di link)
+    </script>
+
+</body>
+
+</html>

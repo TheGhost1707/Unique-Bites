@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About</title>
+    <link rel="icon" type="image/png" href="img/icon/icon_uniquebites.png">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+    <!-- Lottie player DIHAPUS karena tidak digunakan -->
+</head>
+
+<body>
+    <div id="loader" class="active">
+        <div class="loader-logo">
+            <img src="img/logo/loading_uniquebites.png" alt="Loading Logo">
+            <p id="loader-text">Mohon tunggu ya...</p>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="img/logo/Sticker-Minuman.svg" alt="Logo" />
+                <div class="title-slogan">
+                    <h1>Unique Bites</h1>
+                    <p>Rasa yang unik selalu ada</p>
+                </div>
+            </div>
+
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="menu.html">Product/Menu</a></li>
+                    <li><a href="location.html">Location</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+    <main>
+        <div class="welcome-section">
+            <div class="welcome-text">
+                <h2>Tentang Unique Bites ✨</h2>
+                <p>
+                    Unique Bites adalah tempat terbaik untuk menikmati aneka makanan ringan dan minuman kekinian yang
+                    siap memanjakan lidah. Kami menyajikan cemilan manis dan asin dengan cita rasa unik, mulai dari
+                    snack gurih, hingga dessert yang menggoda. Tak hanya itu, Unique Bites juga
+                    menghadirkan pilihan minuman kopi dan non-kopi yang pas dinikmati kapan pun, mulai dari latte
+                    klasik, matcha creamy, hingga minuman dingin yang segar dan menyenangkan.
+
+                    Dengan bahan berkualitas, tampilan yang estetik, dan rasa yang bikin nagih, Unique Bites hadir untuk
+                    jadi teman ngemil dan nongkrongmu — baik di rumah, kantor, maupun saat bersantai. 🌈☕🍪
+
+                </p>
+            </div>
+        </div>
+        <section class="visi-misi">
+            <div class="visi-box">
+                <h3>🎯 Visi</h3>
+                <p>Menjadi pilihan utama dalam camilan dan minuman kreatif di Indonesia yang menghadirkan pengalaman
+                    unik dan menyenangkan bagi setiap pelanggan.</p>
+            </div>
+            <div class="misi-box">
+                <h3>🚀 Misi</h3>
+                <ul>
+                    <li>Menyajikan produk berkualitas tinggi dan aman dikonsumsi.</li>
+                    <li>Menghadirkan cita rasa yang kreatif dan berbeda.</li>
+                    <li>Memberikan pelayanan terbaik dengan sentuhan personal.</li>
+                    <li>Mendukung komunitas lokal dan keberlanjutan.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h3>Kata Mereka Tentang Unique Bites</h3>
+
+            <div class="testimonial-slider-wrapper">
+                <div class="testimonial-slider" id="testimonial-slider"></div>
+                <button class="slider-btn prev" onclick="prevSlide()">❮</button>
+                <button class="slider-btn next" onclick="nextSlide()">❯</button>
+            </div>
+        </section>
+
+        <script>
+            let currentSlide = 0;
+
+            const forbiddenWords = [
+                "anjing", "bangsat", "kontol", "memek", "tolol",
+                "babi", "fuck", "shit", "ngentot", "pantek"
+            ];
+
+            const testimonials = [
+                {
+                    nama: "Intan",
+                    komentar: "Snack-nya enak banget, apalagi yang corndog cheese mozarella + sosis! Wajib coba!",
+                    rating: 5,
+                    initials: "I",
+                    color: "#FFC4C4"
+                },
+                {
+                    nama: "Bagus",
+                    komentar: "Minumannya creamy tapi ringan, cocok banget buat siang hari.",
+                    rating: 4,
+                    initials: "B",
+                    color: "#B8E0D2"
+                },
+                {
+                    nama: "Dian Sartika",
+                    komentar: "Kopinya enak.. cocok nih buat sambil nugas",
+                    rating: 5,
+                    initials: "D",
+                    color: "#DCD6F7"
+                }
+            ];
+
+            function filterKataKasar(text) {
+                forbiddenWords.forEach(word => {
+                    const regex = new RegExp(word, "gi");
+                    const stars = "*".repeat(word.length);
+                    text = text.replace(regex, stars);
+                });
+                return text;
+            }
+
+            function renderTestimonials() {
+                const slider = document.getElementById("testimonial-slider");
+                slider.innerHTML = "";
+
+                if (testimonials.length === 0) {
+                    slider.innerHTML = "<p>Belum ada komentar.</p>";
+                    return;
+                }
+
+                if (currentSlide >= testimonials.length) {
+                    currentSlide = testimonials.length - 1;
+                }
+
+                testimonials.forEach((item, index) => {
+                    const div = document.createElement("div");
+                    div.classList.add("testimonial");
+                    if (index === currentSlide) div.classList.add("active");
+
+                    div.innerHTML = `
+                        <div class="avatar-custom" style="background-color: ${item.color}">
+                            ${item.initials}
+                        </div>
+                        <p>“${filterKataKasar(item.komentar)}”</p>
+                        <div class="rating-stars">${"⭐️".repeat(item.rating)}</div>
+                        <h5>${item.nama}</h5>
+                    `;
+                    slider.appendChild(div);
+                });
+            }
+
+            function nextSlide() {
+                if (testimonials.length === 0) return;
+                currentSlide = (currentSlide + 1) % testimonials.length;
+                updateSlideVisibility();
+            }
+
+            function prevSlide() {
+                if (testimonials.length === 0) return;
+                currentSlide = (currentSlide - 1 + testimonials.length) % testimonials.length;
+                updateSlideVisibility();
+            }
+
+            function updateSlideVisibility() {
+                const slides = document.querySelectorAll(".testimonial");
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle("active", index === currentSlide);
+                });
+            }
+
+            window.addEventListener("DOMContentLoaded", () => {
+                renderTestimonials();
+                setInterval(nextSlide, 6000);
+            });
+        </script>
+
+    </main>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Brand -->
+            <div class="footer-brand">
+                <img src="img/logo/Sticker-Minuman.svg" alt="Unique Bites Logo">
+                <h4>Unique Bites</h4>
+                <p>Snack & minuman unik untuk warna hidupmu 🌈</p>
+            </div>
+
+            <!-- Menu Link -->
+            <div class="footer-links">
+                <h5>Navigasi</h5>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="about.html">Tentang</a></li>
+                    <li><a href="menu.html">Produk</a></li>
+                    <li><a href="location.html">Lokasi</a></li>
+                </ul>
+            </div>
+
+            <!-- Kontak -->
+            <div class="footer-contact">
+                <h5>Kontak Kami</h5>
+                <ul>
+                    <li>📞 <a href="tel:+6281234567890">+62 812-3456-7890</a></li>
+                    <li>📧 <a href="mailto:info@uniquebites.id">info@uniquebites.id</a></li>
+                    <li>📍 Yogyakarta, Indonesia</li>
+                </ul>
+            </div>
+
+            <!-- Sosial Media -->
+            <div class="footer-social">
+                <h5>Ikuti Kami</h5>
+                <div class="social-icons">
+                    <a href="#"><img src="img/logo/instagram.svg" alt="Instagram" /></a>
+                    <a href="#"><img src="img/logo/tiktok.svg" alt="TikTok" /></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bawah -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Unique Bites. Semua hak dilindungi undang-undang. 🍪</p>
+        </div>
+    </footer>
+
+    <script>
+        const slidesContainer = document.querySelector('.slides');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = dots.length;
+        let currentIndex = 0;
+
+        // Sync dots with current slide
+        function updateDots(index) {
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+
+        // Auto slide function
+        function autoSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            updateDots(currentIndex);
+        }
+
+        setInterval(autoSlide, 7000); // Slide tiap 7 detik
+
+    </script>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById("nav-menu");
+            navMenu.classList.toggle("show");
+        }
+    </script>
+    <script>
+        window.addEventListener("load", function () {
+            const loader = document.getElementById("loader");
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 2500); // Biarkan sesuai dengan durasi progressAnim
+        });
+    </script>
+
+    <script>
+        // Loader logic
+        const loader = document.getElementById("loader");
+        const loaderText = document.getElementById("loader-text");
+
+        function showPageLoading() {
+            loaderText.textContent = 'Mohon tunggu...';
+            loader.classList.add('active');
+        }
+
+        function showSlowNetworkLoading() {
+            loaderText.textContent = 'Jaringanmu sedikit lambat...';
+            loader.classList.add('active');
+        }
+
+        function hideLoading() {
+            loader.classList.remove('active');
+        }
+
+        // Hilangkan loader setelah halaman load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                hideLoading();
+            }, 2500); // durasi sesuai animasi / efek
+        });
+
+        // Deteksi jaringan lambat (opsional)
+        if (navigator.connection) {
+            navigator.connection.addEventListener('change', () => {
+                if (navigator.connection.downlink < 0.5) {
+                    showSlowNetworkLoading();
+                    setTimeout(hideLoading, 3000);
+                }
+            });
+        }
+
+    // Catatan: panggil showPageLoading() saat pindah halaman (misalnya onClick di link)
+    </script>
+</body>
+
+</html>
