@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 $host = "localhost";
 $dbname = "uniquebites_kasir";
 $user = "root";
@@ -13,20 +11,23 @@ try {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nama = trim($_POST["nama"]);
     $username = trim($_POST["username"]);
     $password = $_POST["password"];
+    $hashed = password_hash($password, PASSWORD_DEFAULT);
 
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
+    // Cek apakah username sudah ada
+    $stmt = $pdo->prepare("SELECT id FROM users WHERE username = ?");
     $stmt->execute([$username]);
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    if ($user && password_verify($password, $user["password"])) {
-        $_SESSION["user_id"] = $user["id"];
-        $_SESSION["nama"] = $user["nama"];
-        header("Location: page/dashboard.php");
-        exit;
+    if ($stmt->fetch()) {
+        echo "<script>alert('Username sudah terdaftar!'); window.location.href='register.php';</script>";
     } else {
-        echo "<script>alert('Username atau password salah!'); window.location.href='index.php';</script>";
+        $insert = $pdo->prepare("INSERT INTO users (nama, username, password) VALUES (?, ?, ?)");
+        if ($insert->execute([$nama, $username, $hashed])) {
+            echo "<script>alert('Pendaftaran berhasil! Silakan login.'); window.location.href='index.php';</script>";
+        } else {
+            echo "<script>alert('Terjadi kesalahan!'); window.location.href='register.php';</script>";
+        }
     }
 }
 ?>
@@ -37,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Kasir Unique Bites</title>
+    <title>Register - Kasir Unique Bites</title>
     <link rel="stylesheet" href="assets/style/css/auth.css">
 </head>
 
@@ -47,15 +48,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="logo-container">
                 <img src="../img/logo/loading_uniquebites.png" alt="Logo" class="logo">
             </div>
-            <h2>Kasir Unique Bites</h2>
+            <h2>Daftar Unique Bites</h2>
+            <div class="input-group">
+                <input type="text" name="nama" required placeholder="Nama Lengkap">
+            </div>
             <div class="input-group">
                 <input type="text" name="username" required placeholder="Username">
             </div>
             <div class="input-group">
                 <input type="password" name="password" required placeholder="Password">
             </div>
-            <button type="submit">Login</button>
-            <p class="auth-link">Belum punya akun? <a href="register.php">Daftar</a></p>
+            <button type="submit">Register</button>
+            <p class="auth-link">Sudah punya akun? <a href="index.php">Login</a></p>
         </form>
     </div>
 </body>
