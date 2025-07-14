@@ -202,7 +202,7 @@
         window.addEventListener('load', () => {
             setTimeout(() => {
                 hideLoading();
-            }, 2500); // durasi sesuai animasi / efek
+            }, 1500); // durasi sesuai animasi / efek
         });
 
         // Deteksi jaringan lambat (opsional)
@@ -210,7 +210,7 @@
             navigator.connection.addEventListener('change', () => {
                 if (navigator.connection.downlink < 0.5) {
                     showSlowNetworkLoading();
-                    setTimeout(hideLoading, 3000);
+                    setTimeout(hideLoading, 1500);
                 }
             });
         }
