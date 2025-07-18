@@ -11,7 +11,6 @@
 </head>
 
 <body>
-    <div class="bg-icon"></div>
     <!-- Loading Screen -->
     <div id="loader" class="active">
         <div class="loader-logo">
@@ -225,101 +224,7 @@
         </div>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            const navMenu = document.getElementById("nav-menu");
-            navMenu.classList.toggle("show");
-        }
-
-        window.addEventListener("load", function () {
-            const loader = document.getElementById("loader");
-            setTimeout(() => {
-                loader.style.display = "none";
-            }, 2500);
-        });
-    </script>
-    <script>
-        // Observe semua menu-card & subjudul untuk animasi saat masuk viewport
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                    if (entry.target.classList.contains('underline-title')) {
-                        entry.target.classList.add('in-view');
-                    }
-                }
-            });
-        }, {
-            threshold: 0.15
-        });
-
-        // Target semua elemen yang ingin dianimasi
-        document.querySelectorAll('.menu-card, .underline-title').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
-    <script>
-        window.addEventListener("load", function () {
-            const loader = document.getElementById("loader");
-            setTimeout(() => {
-                loader.style.display = "none";
-            }, 2500); // Biarkan sesuai dengan durasi progressAnim
-        });
-    </script>
-
-    <script>
-        // Loader logic
-        const loader = document.getElementById("loader");
-        const loaderText = document.getElementById("loader-text");
-
-        function showPageLoading() {
-            loaderText.textContent = 'Mohon tunggu...';
-            loader.classList.add('active');
-        }
-
-        function hideLoading() {
-            loader.classList.remove('active');
-        }
-
-        // Hilangkan loader setelah halaman load
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                hideLoading();
-            }, 1500); // durasi sesuai animasi / efek
-        });
-
-        // Deteksi jaringan lambat (opsional)
-        if (navigator.connection) {
-            navigator.connection.addEventListener('change', () => {
-                if (navigator.connection.downlink < 0.5) {
-                    showSlowNetworkLoading();
-                    setTimeout(hideLoading, 1500);
-                }
-            });
-        }
-
-        // Catatan: panggil showPageLoading() saat pindah halaman (misalnya onClick di link)
-
-        const slogans = [
-            "Rasa yang unik selalu ada",
-            "Lezatnya nggak ketebak",
-            "Sekali coba, pasti nagih",
-            "Teman nongkrong terbaik",
-            "Bikin hari kamu lebih manis"
-        ];
-
-        let index = 0;
-        const textElement = document.getElementById("slogan-text");
-
-        setInterval(() => {
-            textElement.style.opacity = 0; // fade out
-            setTimeout(() => {
-                index = (index + 1) % slogans.length;
-                textElement.textContent = slogans[index];
-                textElement.style.opacity = 1; // fade in
-            }, 500);
-        }, 3000); // ganti tiap 3 detik
-    </script>
+    <script src="style/script.js"></script>
 
 </body>
 

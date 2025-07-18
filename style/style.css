@@ -13,27 +13,9 @@
 
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(-45deg, #fceabb, #f8b500, #fcd5ce, #f9dcc4);
-    background-size: 400% 400%;
-    animation: gradientMove 10s ease infinite;
+    background: linear-gradient(to bottom, #ffffff);
     color: #333;
-    transition: background 0.5s;
 }
-
-@keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
 
 /* Loader wrapper */
 #loader {
