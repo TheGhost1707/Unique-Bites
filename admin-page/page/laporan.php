@@ -126,14 +126,6 @@ try {
                     <option <?= $periode == 'Minggu' ? 'selected' : '' ?>>Minggu</option>
                     <option <?= $periode == 'Bulan' ? 'selected' : '' ?>>Bulan</option>
                 </select>
-                <label for="kategori">Kategori:</label>
-                <select id="kategori" name="kategori">
-                    <option <?= $kategori == 'Semua' ? 'selected' : '' ?>>Semua</option>
-                    <option <?= $kategori == 'Cemilan' ? 'selected' : '' ?>>Cemilan</option>
-                    <option <?= $kategori == 'Minuman Kopi' ? 'selected' : '' ?>>Minuman Kopi</option>
-                    <option <?= $kategori == 'Minuman Non-Kopi' ? 'selected' : '' ?>>Minuman Non-Kopi</option>
-                </select>
-
                 <button class="btn-export">Export PDF</button>
             </div>
 
