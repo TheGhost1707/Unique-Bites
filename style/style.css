@@ -142,6 +142,10 @@ header {
     justify-content: center;
 }
 
+#slogan-text {
+    transition: opacity 0.5s ease-in-out;
+}
+
 .logo img {
     width: 90px;
     height: auto;
