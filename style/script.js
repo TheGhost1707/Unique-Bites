@@ -1,10 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
     initLoader();
+    initMenuToggle(); // 👈 ini dia yang nambah
     initAutoSlide();
     initMenuAnimation();
     initSloganRotator();
     initTestimonials();
 });
+
+
+function initMenuToggle() {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("show");
+        });
+    }
+}
 
 /* ========== LOADER ========== */
 function initLoader() {
@@ -112,23 +125,30 @@ function initTestimonials() {
     const testimonials = [
         {
             nama: "Intan",
-            komentar: "Snack-nya enak banget, apalagi yang corndog cheese mozarella + sosis! Wajib coba!",
+            komentar: "Cemilan-nya enak banget, apalagi yang Pisang Keju Coklat! Wajib coba dehh !",
             rating: 5,
             initials: "I",
             color: "#FFC4C4"
         },
         {
             nama: "Bagus",
-            komentar: "Minumannya creamy tapi ringan, cocok banget buat siang hari.",
+            komentar: "Minuman kopinya creamy tapi ringan, cocok banget buat siang hari segerr cuy !",
             rating: 4,
             initials: "B",
             color: "#B8E0D2"
         },
         {
-            nama: "Dian Sartika",
+            nama: "Dian Maharani",
             komentar: "Kopinya enak.. cocok nih buat sambil nugas",
             rating: 5,
             initials: "D",
+            color: "#DCD6F7"
+        },
+        {
+            nama: "Erina",
+            komentar: "Minumannya lumayan enak sih, apalagi yang Matcha !",
+            rating: 4,
+            initials: "E",
             color: "#DCD6F7"
         }
     ];
