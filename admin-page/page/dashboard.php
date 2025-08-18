@@ -101,6 +101,7 @@ try {
                             <th>Tanggal</th>
                             <th>Kasir</th>
                             <th>Total</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -111,6 +112,11 @@ try {
                                     <td><?= date('d/m/Y H:i', strtotime($t['tanggal'])) ?></td>
                                     <td><?= htmlspecialchars($t['kasir']) ?></td>
                                     <td>Rp <?= number_format($t['total'], 0, ',', '.') ?></td>
+                                    <td>
+                                        <a href="hapus_transaksi.php?id=<?= $t['id_transaksi'] ?>" onclick="return confirm('Yakin ingin menghapus transaksi ini?')" style="color:red; text-decoration:none;">
+                                            Hapus
+                                        </a>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         <?php else : ?>

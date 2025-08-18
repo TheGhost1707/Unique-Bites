@@ -123,8 +123,8 @@ try {
                 <label for="periode">Periode:</label>
                 <select id="periode" name="periode">
                     <option <?= $periode == 'Hari' ? 'selected' : '' ?>>Hari</option>
-                    <option <?= $periode == 'Minggu' ? 'selected' : '' ?>>Minggu</option>
-                    <option <?= $periode == 'Bulan' ? 'selected' : '' ?>>Bulan</option>
+                    <option <?= $periode == 'Minggu' ? '' : '' ?>>Minggu</option>
+                    <option <?= $periode == 'Bulan' ? '' : '' ?>>Bulan</option>
                 </select>
                 <button class="btn-export">Export PDF</button>
             </div>

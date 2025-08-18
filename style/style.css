@@ -115,7 +115,7 @@ header {
     position: static;
     top: 0;
     z-index: 999;
-    background-color: #547c65;
+    background: linear-gradient(20deg, #EC6426, #fcd34c);
     color: var(--text-color);
     backdrop-filter: blur(var(--blur));
     -webkit-backdrop-filter: blur(var(--blur));
@@ -541,7 +541,7 @@ p {
 }
 
 .footer {
-    background: linear-gradient(135deg, #598043dc, #547c65);
+    background: linear-gradient(20deg, #fcd34c, #EC6426);
     color: #fff;
     padding: 3rem 1rem 1rem;
     font-family: 'Segoe UI', sans-serif;
@@ -749,7 +749,7 @@ p {
 
 .testimonials {
     padding: 3rem 1rem;
-    background-color: #def1a8;
+    background-color: #c1db82;
     text-align: center;
     position: relative;
 }
@@ -907,7 +907,7 @@ p {
 .product-section {
     padding: 2rem 2rem;
     text-align: center;
-    background: linear-gradient(135deg, #c4f8a6 0%, #9ad463 100%);
+    background: linear-gradient(135deg, #c4f8a6 0%, #ec8c5f 100%);
 }
 
 .product-section h3 {
