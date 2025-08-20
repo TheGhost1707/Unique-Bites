@@ -125,14 +125,14 @@ function initTestimonials() {
     const testimonials = [
         {
             nama: "Intan",
-            komentar: "Cemilan-nya enak banget, apalagi yang Pisang Keju Coklat! Wajib coba dehh !",
+            komentar: "Cemilan-nya enak banget, apalagi yang Bolen keju sama coklatnya. Lumerr cuy! Wajib coba dehh !",
             rating: 5,
             initials: "I",
             color: "#FFC4C4"
         },
         {
             nama: "Bagus",
-            komentar: "Minuman kopinya creamy tapi ringan, cocok banget buat siang hari segerr cuy !",
+            komentar: "Minuman kopinya creamy tapi ringan, cocok banget buat siang hari bikin segerr !",
             rating: 4,
             initials: "B",
             color: "#B8E0D2"
@@ -146,7 +146,7 @@ function initTestimonials() {
         },
         {
             nama: "Erina",
-            komentar: "Minumannya lumayan enak sih, apalagi yang Matcha !",
+            komentar: "Minumannya lumayan enak sih, apalagi yang Matcha dan Thaitea !",
             rating: 4,
             initials: "E",
             color: "#DCD6F7"
