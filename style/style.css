@@ -726,25 +726,36 @@ p {
 
     .visi-box,
     .misi-box {
-        padding: 1.5rem;
-        max-width: 400px;
-        max-height: 400px;
+        padding: 1.2rem;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .visi-box h3,
     .misi-box h3 {
         text-align: center;
         font-size: 1.2rem;
+        margin-bottom: 0.8rem;
     }
 
     .visi-box p,
     .misi-box ul {
         text-align: justify;
-        font-size: 0.90rem;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        /* biar lebih enak dibaca */
+        margin: 0.5rem 0;
+        /* kasih jarak antar paragraf */
     }
 
     .misi-box ul {
-        padding-left: 1rem;
+        padding-left: 1.2rem;
+        /* rapikan list */
+    }
+
+    .misi-box ul li {
+        margin-bottom: 0.4rem;
+        /* kasih jarak antar item list */
     }
 }
 
