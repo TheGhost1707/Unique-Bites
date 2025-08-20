@@ -727,8 +727,8 @@ p {
     .visi-box,
     .misi-box {
         padding: 1.5rem;
-        max-width: 300px;
-        max-height: 250px;
+        max-width: 400px;
+        max-height: 350px;
     }
 
     .visi-box h3,
